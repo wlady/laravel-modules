@@ -1,0 +1,22 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Admin Panel Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+use Illuminate\Routing\Router;
+
+Route::group([
+    'prefix'        => config('admin.route.prefix'),
+    'namespace'     => config('admin.route.namespace'),
+    'middleware'    => config('admin.route.middleware'),
+], function (Router $router) {
+
+    Route::prefix('$LOWER_NAME$')->group(function() {
+        Route::get('/', '$STUDLY_NAME$Controller@index');
+    });
+
+});

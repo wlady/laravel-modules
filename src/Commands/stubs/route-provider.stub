@@ -66,4 +66,19 @@ class $CLASS$ extends ServiceProvider
             ->namespace($this->moduleNamespace)
             ->group(__DIR__ . '/..$API_ROUTES_PATH$');
     }
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::prefix('admin')
+            ->middleware('admin')
+            ->namespace($this->moduleNamespace)
+            ->group(__DIR__ . '/..$ADMIN_ROUTES_PATH$');
+    }
 }
