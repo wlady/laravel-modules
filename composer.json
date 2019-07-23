@@ -1,5 +1,5 @@
 {
-  "name": "nwidart/laravel-modules",
+  "name": "wlady/laravel-modules",
   "description": "Laravel Module management",
   "keywords": [
     "modules",
@@ -14,6 +14,11 @@
       "name": "Nicolas Widart",
       "email": "n.widart@gmail.com",
       "homepage": "https://nicolaswidart.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Vladimir Zabara",
+      "email": "wlady2001@gmail.com",
       "role": "Developer"
     }
   ],
