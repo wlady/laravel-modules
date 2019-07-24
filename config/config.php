@@ -41,7 +41,7 @@ return [
         'replacements' => [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME'],
             'routes/api' => ['LOWER_NAME'],
-            'routes/admin' => ['LOWER_NAME'],
+            'routes/admin' => ['LOWER_NAME', 'STUDLY_NAME'],
             'webpack' => ['LOWER_NAME'],
             'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
             'views/index' => ['LOWER_NAME'],
@@ -106,6 +106,8 @@ return [
             'factory' => ['path' => 'Database/factories', 'generate' => true],
             'model' => ['path' => 'Entities', 'generate' => true],
             'controller' => ['path' => 'Http/Controllers', 'generate' => true],
+            'admin' => ['path' => 'Http/Controllers/Admin', 'generate' => true],
+            'api' => ['path' => 'Http/Controllers/Api', 'generate' => true],
             'filter' => ['path' => 'Http/Middleware', 'generate' => true],
             'request' => ['path' => 'Http/Requests', 'generate' => true],
             'provider' => ['path' => 'Providers', 'generate' => true],

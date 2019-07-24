@@ -344,6 +344,20 @@ class ModuleGenerator extends Generator
             'controller' => $this->getName() . 'Controller',
             'module' => $this->getName(),
         ]);
+
+        // generate admin controller
+        $this->console->call('module:make-controller', [
+            'controller' => $this->getName() . 'Controller',
+            'module' => $this->getName(),
+            '--admin' => true,
+        ]);
+
+        // generate api controller
+        $this->console->call('module:make-controller', [
+            'controller' => $this->getName() . 'Controller',
+            'module' => $this->getName(),
+            '--api' => true,
+        ]);
     }
 
     /**

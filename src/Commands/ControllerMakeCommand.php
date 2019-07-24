@@ -43,7 +43,7 @@ class ControllerMakeCommand extends GeneratorCommand
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
 
-        $controllerPath = GenerateConfigReader::read('controller');
+        $controllerPath = GenerateConfigReader::read($this->getType());
 
         return $path . $controllerPath->getPath() . '/' . $this->getControllerName() . '.php';
     }
@@ -90,6 +90,7 @@ class ControllerMakeCommand extends GeneratorCommand
         return [
             ['plain', 'p', InputOption::VALUE_NONE, 'Generate a plain controller', null],
             ['api', null, InputOption::VALUE_NONE, 'Exclude the create and edit methods from the controller.'],
+            ['admin', null, InputOption::VALUE_NONE, 'Generate admin controller.'],
         ];
     }
 
@@ -121,6 +122,25 @@ class ControllerMakeCommand extends GeneratorCommand
     }
 
     /**
+     * Get the type based on the options
+     * @return string
+     */
+    private function getType()
+    {
+        if ($this->option('plain') === true) {
+            $type = 'controller';
+        } elseif ($this->option('api') === true) {
+            $type = 'api';
+        } elseif ($this->option('admin') === true) {
+            $type = 'admin';
+        } else {
+            $type = 'controller';
+        }
+
+        return $type;
+    }
+
+    /**
      * Get the stub file name based on the options
      * @return string
      */
@@ -130,6 +150,8 @@ class ControllerMakeCommand extends GeneratorCommand
             $stub = '/controller-plain.stub';
         } elseif ($this->option('api') === true) {
             $stub = '/controller-api.stub';
+        } elseif ($this->option('admin') === true) {
+            $stub = '/controller-admin.stub';
         } else {
             $stub = '/controller.stub';
         }

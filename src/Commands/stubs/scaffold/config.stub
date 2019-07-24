@@ -1,5 +1,14 @@
 <?php
 
 return [
-    'name' => '$STUDLY_NAME$'
+    'name' => '$STUDLY_NAME$',
+    'admin' => [
+        'title' => '$STUDLY_NAME$',
+        'icon' => 'far fa-file',
+        // parent can be defined as 'id' => (int) or 'uri' => (string)
+        'parent' => [
+            'id' => 0,
+        ],
+        'menu-order' => 0,
+    ],
 ];
