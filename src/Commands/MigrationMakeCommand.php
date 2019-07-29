@@ -52,6 +52,7 @@ class MigrationMakeCommand extends GeneratorCommand
         return [
             ['fields', null, InputOption::VALUE_OPTIONAL, 'The specified fields table.', null],
             ['plain', null, InputOption::VALUE_NONE, 'Create plain migration.'],
+            ['table',  null, InputOption::VALUE_OPTIONAL, 'The table to migrate.'],
         ];
     }
 
@@ -75,9 +76,11 @@ class MigrationMakeCommand extends GeneratorCommand
         $parser = new NameParser($this->argument('name'));
 
         if ($parser->isCreate()) {
+            $table = $this->input->getOption('table') ?? $parser->getTableName();
+
             return Stub::create('/migration/create.stub', [
                 'class' => $this->getClass(),
-                'table' => $parser->getTableName(),
+                'table' => $table,
                 'fields' => $this->getSchemaParser()->render(),
             ]);
         } elseif ($parser->isAdd()) {

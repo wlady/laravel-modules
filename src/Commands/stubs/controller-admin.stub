@@ -3,9 +3,6 @@
 namespace $CLASS_NAMESPACE$\Admin;
 
 use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
