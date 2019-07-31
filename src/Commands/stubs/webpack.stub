@@ -4,7 +4,11 @@ require('laravel-mix-merge-manifest');
 mix.setPublicPath('../../../public').mergeManifest();
 
 mix.js(__dirname + '/Resources/assets/js/app.js', 'js/$LOWER_NAME$.js')
-    .sass( __dirname + '/Resources/assets/sass/app.scss', 'css/$LOWER_NAME$.css');
+    .sass( __dirname + '/Resources/assets/sass/app.scss', 'css/$LOWER_NAME$.css')
+    .copyDirectory(
+        __dirname + '/Resources/assets/js/tools/$LOWER_NAME$.js',
+        __dirname + '../../../../public/vendor/modules/$LOWER_NAME$'
+    );
 
 if (mix.inProduction()) {
     mix.version();
