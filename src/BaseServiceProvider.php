@@ -30,12 +30,14 @@ class BaseServiceProvider extends ModulesServiceProvider
 
     protected function registerConfig()
     {
-        $this->publishes([
-            $this->basePath . '/../Config/config.php' => config_path($this->baseNameLowerCase . '.php'),
-        ], 'config');
-        $this->mergeConfigFrom(
-            $this->basePath . '/../Config/config.php', $this->baseNameLowerCase
-        );
+        if (file_exists($this->basePath . '/../Config/config.php')) {
+            $this->publishes([
+                $this->basePath . '/../Config/config.php' => config_path($this->baseNameLowerCase . '.php'),
+            ], 'config');
+            $this->mergeConfigFrom(
+                $this->basePath . '/../Config/config.php', $this->baseNameLowerCase
+            );
+        }
     }
 
     public function registerViews()
