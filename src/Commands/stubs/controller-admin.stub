@@ -26,11 +26,11 @@ class $CLASS$ extends AdminController
     {
         $grid = new Grid(new User);
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('email', __('Email'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', trans('Id'));
+        $grid->column('name', trans('Name'));
+        $grid->column('email', trans('Email'));
+        $grid->column('created_at', trans('Created at'));
+        $grid->column('updated_at', trans('Updated at'));
 
         return $grid;
     }
@@ -45,11 +45,11 @@ class $CLASS$ extends AdminController
     {
         $show = new Show(User::findOrFail($id));
 
-        $show->field('id', __('Id'));
-        $show->field('name', __('Name'));
-        $show->field('email', __('Email'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('id', trans('Id'));
+        $show->field('name', trans('Name'));
+        $show->field('email', trans('Email'));
+        $show->field('created_at', trans('Created at'));
+        $show->field('updated_at', trans('Updated at'));
 
         return $show;
     }
@@ -63,12 +63,12 @@ class $CLASS$ extends AdminController
     {
         $form = new Form(new User);
 
-        $form->display('id', __('Id'));
-        $form->text('name', __('Name'));
-        $form->email('email', __('Email'));
-        $form->password('password', __('Password'));
-        $form->display('created_at', __('Created at'));
-        $form->display('updated_at', __('Updated at'));
+        $form->display('id', trans('Id'));
+        $form->text('name', trans('Name'));
+        $form->email('email', trans('Email'));
+        $form->password('password', trans('Password'));
+        $form->display('created_at', trans('Created at'));
+        $form->display('updated_at', trans('Updated at'));
 
         return $form;
     }
