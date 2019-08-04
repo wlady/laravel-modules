@@ -1,0 +1,6 @@
+/.idea
+/node_modules
+/vendor
+package-lock.json
+npm-debug.log
+yarn-error.log
