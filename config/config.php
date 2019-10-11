@@ -37,6 +37,7 @@ return [
             'assets/sass/app' => 'Resources/assets/sass/app.scss',
             'webpack' => 'webpack.mix.js',
             'package' => 'package.json',
+            'phpunit' => 'phpunit.xml',
             'gitignore' => '.gitignore',
         ],
         'replacements' => [
@@ -116,6 +117,7 @@ return [
             'lang' => ['path' => 'Resources/lang', 'generate' => true],
             'views' => ['path' => 'Resources/views', 'generate' => true],
             'test' => ['path' => 'Tests/Unit', 'generate' => true],
+            'test-api' => ['path' => 'Tests/Api', 'generate' => true],
             'test-feature' => ['path' => 'Tests/Feature', 'generate' => true],
             'repository' => ['path' => 'Repositories', 'generate' => false],
             'event' => ['path' => 'Events', 'generate' => false],
