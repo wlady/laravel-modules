@@ -56,7 +56,7 @@ abstract class BaseTestCase extends OrchestraTestCase
                 'event' => ['path' => 'Events', 'generate' => true],
                 'listener' => ['path' => 'Listeners', 'generate' => true],
                 'migration' => ['path' => 'Database/Migrations', 'generate' => true],
-                'factory' => ['path' => 'Database/factories', 'generate' => true],
+                'factory' => ['path' => 'Database/Factories', 'generate' => true],
                 'model' => ['path' => 'Entities', 'generate' => true],
                 'repository' => ['path' => 'Repositories', 'generate' => true],
                 'seeder' => ['path' => 'Database/Seeders', 'generate' => true],

@@ -224,7 +224,7 @@ class ModuleMakeCommandTest extends BaseTestCase
             'event' => 'Events',
             'listener' => 'Listeners',
             'migration' => 'Database/Migrations',
-            'factory' => 'Database/factories',
+            'factory' => 'Database/Factories',
             'model' => 'Entities',
             'repository' => 'Repositories',
             'seeder' => 'Database/Seeders',
