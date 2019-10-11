@@ -69,7 +69,7 @@ class BaseServiceProvider extends ModulesServiceProvider
     public function registerFactories()
     {
         if ( ! app()->environment('production') && $this->app->runningInConsole()) {
-            app(Factory::class)->load(__DIR__ . '/../Database/Factories');
+            app(Factory::class)->load($this->basePath . '/../Database/Factories');
         }
     }
 
