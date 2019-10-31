@@ -2,12 +2,12 @@
 
 namespace Nwidart\Modules;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 use Nwidart\Modules\Providers\BootstrapServiceProvider;
 use Nwidart\Modules\Providers\ConsoleServiceProvider;
 use Nwidart\Modules\Providers\ContractsServiceProvider;
 
-abstract class ModulesServiceProvider extends ServiceProvider
+abstract class ModulesServiceProvider extends AuthServiceProvider
 {
     /**
      * Booting the package.

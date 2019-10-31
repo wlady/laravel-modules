@@ -22,6 +22,7 @@ class BaseServiceProvider extends ModulesServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom($this->basePath . '/../Database/Migrations');
+        $this->registerPolicies();
     }
 
     protected function registerServices()
