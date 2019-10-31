@@ -2,9 +2,9 @@
 
 namespace $CLASS_NAMESPACE$\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
 
 class $CLASS$ extends Controller
 {
